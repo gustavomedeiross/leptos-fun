@@ -1,0 +1,10 @@
+# direnv
+.direnv
+.envrc
+.envrc.local
+
+# rust
+debug/
+target/
+**/*.rs.bk
+*.pdb
