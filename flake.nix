@@ -39,13 +39,7 @@
 
         craneLib = crane.lib.${system}.overrideToolchain toolchain;
 
-        sqlFilter = path: _type: null != builtins.match ".*sql$" path;
-        sqlOrCargo = path: type: (sqlFilter path type) || (craneLib.filterCargoSources path type);
-
-        src = lib.cleanSourceWith {
-          src = craneLib.path ./.; # The original, unfiltered source
-          filter = sqlOrCargo;
-        };
+        src = craneLib.cleanCargoSource (craneLib.path ./.);
 
         # Common arguments can be set here to avoid repeating them later
         commonArgs = {
