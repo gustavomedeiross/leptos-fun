@@ -145,6 +145,8 @@
             toolchain
             # used for running CSR Leptos
             trunk
+            # format view! macros
+            leptosfmt
           ] ++ commonArgs.nativeBuildInputs;
         };
       });

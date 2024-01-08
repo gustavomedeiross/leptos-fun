@@ -8,3 +8,6 @@ debug/
 target/
 **/*.rs.bk
 *.pdb
+
+# leptos
+dist
